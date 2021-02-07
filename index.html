@@ -12,12 +12,39 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
+    
+          
+    
+      class Site extends React.Component {   
+        constructor(props) {
+          super(props);
+          this.archeoproperties = {
+            {name: 'Name', value: 'some site'},
+            {name: 'Location', value: 'neverland'}
+          };
+        }
+        
+        render() {
+           return (
+            <ul>
+              {archeoproperties.map((archeoproperty, index) => {
+                return <li key={index}>{archeoproperty.name} : {archeoproperty.value}</li>
+              })}
+           </ul>
+    );
+  }
+}
 
       ReactDOM.render(
         <h1>Hello ArcheoScribe React!</h1>,
         document.getElementById('root')
       );
 
+    
+    
+    
+    
+    
     </script>
     <!--
       Note: this page is a great way to try React but it's not suitable for production.
